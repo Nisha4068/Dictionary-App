@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+            </div>
+            <div class="controls">
+                <select id="fontSelect" class="font-select">
+                    <option value="serif">Serif</option>
+                    <option value="sans-serif">Sans Serif</option>
+                    <option value="mono">Mono</option>
+                </select>
+                <div class="theme-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="keyboard" class="search-input">
+            <button id="searchBtn" class="search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="results" class="results">
+            <div class="word-header">
+                <h1 id="wordTitle">keyboard</h1>
+                <button id="playBtn" class="play-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5,3 19,12 5,21"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <p id="phonetic" class="phonetic">/ˈkiːbɔːd/</p>
+
+            <div class="definitions-section">
+                <h2 class="part-of-speech">noun</h2>
+                <p class="meaning-label">Meaning</p>
+                <ul id="definitions" class="definitions-list">
+                    <li>A set of keys used to operate a typewriter, computer, etc.</li>
+                    <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
+                    <li>A device with keys or a set of buttons used to lock or unlock something from the keyboard device.</li>
+                </ul>
+                
+                <div class="synonyms-section">
+                    <span class="synonyms-label">Synonyms</span>
+                    <span id="synonyms" class="synonyms-text">electronic keyboard</span>
+                </div>
+            </div>
+
+            <div class="definitions-section">
+                <h2 class="part-of-speech">verb</h2>
+                <p class="meaning-label">Meaning</p>
+                <ul class="definitions-list">
+                    <li>To type on a computer keyboard</li>
+                    <li>To configure a keyboard key</li>
+                </ul>
+            </div>
+
+            <div class="source-section">
+                <span class="source-label">Source</span>
+                <a href="#" id="sourceLink" class="source-link">https://en.wiktionary.org/wiki/keyboard</a>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error" class="error hidden">
+            <p>Word not found. Please try another word.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
